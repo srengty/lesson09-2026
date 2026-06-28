@@ -12,7 +12,7 @@ pipeline {
     }
     stage('Package') {
       steps { 
-        maven '-B clean package -DskipTests'
+        bat 'mvn -B clean package -DskipTests'
       }
       post {
         success {
