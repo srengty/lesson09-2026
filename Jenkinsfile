@@ -1,9 +1,9 @@
+@Library('itc-shared') _
 pipeline {
   agent any
   stages {
     stage('Welcome') {
         steps {
-          @Library('itc-shared') _
           sayHello('World')
         }
     }
