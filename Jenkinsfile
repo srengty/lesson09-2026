@@ -1,6 +1,9 @@
 @Library('itc-shared') _
 pipeline {
   agent any
+  tools {
+    maven 'Maven'
+  }
   stages {
     stage('Welcome') {
         steps {
@@ -9,7 +12,7 @@ pipeline {
     }
     stage('Package') {
       steps { 
-        bat 'mvn -B clean package -DskipTests'
+        maven '-B clean package -DskipTests'
       }
       post {
         success {
