@@ -8,7 +8,8 @@ pipeline {
           archiveArtifacts artifacts: 'target/*.war',
                            fingerprint: true,
                            onlyIfSuccessful: true
-          @Library('itc-shared') sayHello('World')
+          @Library('itc-shared') _
+          sayHello('World')
         }
       }
     }
